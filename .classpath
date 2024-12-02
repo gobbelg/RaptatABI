@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding=".classpath|.euml2|.project|.settings/|.umlproject|RapTATTestingData/|_RapTATBoostrapTestSet/|bin/|doc/|en-pos-maxent.bin|en-sent.bin|en-token.bin|lexicon.txt|medlexicon.txt|src.zip|src/main/gov/va/vha09/grecc/raptat/gg/candidates/SparkMachineLearningImpl.java|src/main/gov/va/vha09/grecc/raptat/gg/core/deprecated/AnnotationFinderWindow.java|src/main/gov/va/vha09/grecc/raptat/gg/core/deprecated/UpdateAnnotatorWindow.java|src/main/gov/va/vha09/grecc/raptat/gg/helpers/OIdOffsetParser/|src/main/gov/va/vha09/grecc/raptat/gg/oneoffs/CRFforLiverNodules.java|src/main/gov/va/vha09/grecc/raptat/gg/oneoffs/EHostToAnnotAdminTranslator.java|src/main/gov/va/vha09/grecc/raptat/gg/oneoffs/UMLSSearcher.java|src/main/gov/va/vha09/grecc/raptat/gg/sql/SQLAnnotationRetriever.java|src/main/gov/va/vha09/grecc/raptat/gg/sql/SQLAnnotationWriter.java|src/main/gov/va/vha09/grecc/raptat/kg/candidates/ReadPDF.java|src/test/gov/va/vha09/grecc/raptat/dw/_archived/|src/test/gov/va/vha09/grecc/raptat/gg/importer/xml/AnnotationDomFilterTest.java|tagdict|src/test/gov/va/vha09/grecc/raptat/dw/unit_tests/|src/test/gov/va/vha09/grecc/raptat/dw/AllUnitTests.java|src/test/gov/va/vha09/grecc/raptat/dw/common/TestDocBase.java|src/main/gov/va/vha09/grecc/raptat/dw/textanalysis/fsm_pattern_detection/code/FSMConfigurator.java|src/main/resources/config/|src2/main/gov/va/vha09/grecc/raptat/kg/candidates/|src2/main/gov/va/vha09/grecc/raptat/gg/core/deprecated/AnnotationFinderWindow.java|src2/main/gov/va/vha09/grecc/raptat/gg/core/deprecated/UpdateAnnotatorWindow.java|src2/main/gov/va/vha09/grecc/raptat/gg/sql/SQLAnnotationRetriever.java|src2/main/gov/va/vha09/grecc/raptat/gg/sql/SQLAnnotationWriter.java|src2/main/gov/va/vha09/grecc/raptat/dw/textanalysis/fsm_pattern_detection/code/FSMConfigurator.java|src/main2/gov/va/vha09/grecc/raptat/kg/candidates/ReadExcel.java|src/main2/gov/va/vha09/grecc/raptat/kg/candidates/ReadPDF.java|src/main2/gov/va/vha09/grecc/raptat/dw/textanalysis/fsm_pattern_detection/code/FSMConfigurator.java|src/main2/gov/va/vha09/grecc/raptat/gg/core/deprecated/AnnotationFinderWindow.java|src/main2/gov/va/vha09/grecc/raptat/gg/core/deprecated/UpdateAnnotatorWindow.java|src/main2/gov/va/vha09/grecc/raptat/gg/sql/SQLAnnotationRetriever.java|src/main2/gov/va/vha09/grecc/raptat/gg/sql/SQLAnnotationWriter.java|src/main2/gov/va/vha09/grecc/raptat/|src/main/gov/va/vha09/grecc/raptat/gg/analysis/scorer/ScoringParameterObjectOld.java|src/main/gov/va/vha09/grecc/raptat/gg/analysis/scorer/ScoringParameterObjectNew.java|src/main/gov/va/vha09/grecc/raptat/gg/oneoffs/projectspecific/girotraabi/temp/OhTeleDerm.java|src/main/gov/va/vha09/grecc/raptat/gg/oneoffs/projectspecific/girotraabi/TempGirotraABI.java|src/test/" kind="src" path="trunk"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="jars/junit-4.8.2.jar"/>
+	<classpathentry kind="lib" path="jars/knowtator1.9.jar"/>
+	<classpathentry kind="lib" path="jars/looks-2.0.1.jar"/>
+	<classpathentry kind="lib" path="jars/protege-core.jar"/>
+	<classpathentry kind="lib" path="jars/ScrollableBar.jar"/>
+	<classpathentry kind="lib" path="jars/commons-lang-2.6.jar"/>
+	<classpathentry kind="lib" path="jars/jdom.jar" sourcepath="C:/Users/VHATVHWesteD/.m2/repository/jdom/jdom/1.0/jdom-1.0-sources.jar"/>
+	<classpathentry kind="lib" path="jars/xercesImpl.jar"/>
+	<classpathentry kind="lib" path="jars/jaxb-api-2.0.jar"/>
+	<classpathentry kind="lib" path="jars/ant.jar"/>
+	<classpathentry kind="lib" path="jars/nekohtml-1.9.14.jar"/>
+	<classpathentry kind="lib" path="jars/tika-core-0.7.jar"/>
+	<classpathentry kind="lib" path="jars/opennlp-maxent-3.0.2-incubating.jar"/>
+	<classpathentry kind="lib" path="jars/opennlp-tools-1.5.2-incubating.jar"/>
+	<classpathentry kind="lib" path="jars/opennlp-uima-1.5.2-incubating.jar"/>
+	<classpathentry kind="lib" path="jars/quaqua.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="RapTAT_Only_140513/jars"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="jars/uima-core.jar"/>
+	<classpathentry kind="lib" path="jars/uima-cpe.jar"/>
+	<classpathentry kind="lib" path="jars/uima-document-annotation.jar"/>
+	<classpathentry kind="lib" path="jars/uima-tools.jar"/>
+	<classpathentry kind="lib" path="jars/stanford-postagger.jar"/>
+	<classpathentry kind="lib" path="jars/sptoolkit.jar"/>
+	<classpathentry kind="lib" path="jars/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="jars/jimfs-1.2.jar" sourcepath="jars/jimfs-1.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/RapTATBaseProject/jars/jimfs-1.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="jars/guava-31.1-jre.jar"/>
+	<classpathentry kind="lib" path="jars/mysema-commons-lang-0.2.4.jar"/>
+	<classpathentry kind="lib" path="jars/querydsl-core-5.0.0.jar"/>
+	<classpathentry kind="lib" path="jars/querydsl-sql-5.0.0.jar"/>
+	<classpathentry kind="lib" path="jars/jcrfsuite-0.6.1.jar"/>
+	<classpathentry kind="lib" path="jars/lvg2024dist.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Mallet2p0p8"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="jars/commons-math3-3.5.jar"/>
+	<classpathentry kind="lib" path="jars/poi-3.12-20150511.jar"/>
+	<classpathentry kind="lib" path="jars/poi-examples-3.12-20150511.jar"/>
+	<classpathentry kind="lib" path="jars/poi-excelant-3.12-20150511.jar"/>
+	<classpathentry kind="lib" path="jars/poi-ooxml-3.12-20150511.jar"/>
+	<classpathentry kind="lib" path="jars/poi-ooxml-schemas-3.12-20150511.jar"/>
+	<classpathentry kind="lib" path="jars/poi-scratchpad-3.12-20150511.jar"/>
+	<classpathentry kind="lib" path="jars/commons-cli-1.4.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/Users/glenn/SubversionMatheny/branches/GlennWorkspace/Projects/CommonProjectJars/commons-cli-1.4-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="jars/commons-lang3-3.6.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/Users/glenn/SubversionMatheny/branches/GlennWorkspace/Projects/CommonProjectJars/commons-lang3-3.6-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="jars/commons-text-1.1.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/RapTATBaseProject/jars/commons-text-1.1-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="jars/hadoop-common-2.5.1.jar"/>
+	<classpathentry kind="lib" path="jars/hbase-server-1.2.6.jar"/>
+	<classpathentry kind="lib" path="jars/xmlunit-core-2.5.1.jar"/>
+	<classpathentry kind="lib" path="jars/jeval.jar"/>
+	<classpathentry kind="lib" path="jars/stanford-parser.jar"/>
+	<classpathentry kind="lib" path="jars/commons-io-2.5.jar" sourcepath="jars/commons-io-2.6-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/RapTATBaseProject/jars/commons-io-2.6-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="jars/commons-csv-1.6.jar"/>
+	<classpathentry kind="lib" path="jars/multisearch-2018.9.2.jar" sourcepath="C:/Users/VHATVHWesteD/.m2/repository/com/github/fracpete/multisearch-weka-package/2018.9.2/multisearch-weka-package-2018.9.2-sources.jar"/>
+	<classpathentry kind="lib" path="jars/weka.jar" sourcepath="jars/weka-src.jar"/>
+	<classpathentry kind="lib" path="jars/hbase-common-1.2.6.jar"/>
+	<classpathentry kind="lib" path="jars/automaton-1.11.2.jar"/>
+	<classpathentry kind="lib" path="jars/commons-collections4-4.4.jar"/>
+	<classpathentry kind="lib" path="jars/generex-1.0.2.jar" sourcepath="jars/generex-1.0.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/RapTATBaseProject/jars/generex-1.0.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="jars/WekaMultiSearch-1.0-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="jars/WekaMultiSearchParams-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

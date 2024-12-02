@@ -4,7 +4,7 @@
 
 # Ignore Eclipse-specific files except for .project
 #.project
-.classpath
+#.classpath
 .settings/
 
 # Ignore Maven and Gradle build output
