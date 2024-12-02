@@ -2,8 +2,8 @@
 /bin/
 /build/
 
-# Ignore Eclipse-specific files
-.project
+# Ignore Eclipse-specific files except for .project
+#.project
 .classpath
 .settings/
 
@@ -42,3 +42,9 @@ Thumbs.db
 
 # Ignore test directories
 test/
+
+# Ignore large Stanford core jars
+stanford-core*.jar
+
+# Ignore lvg distribution jar
+lvg*.jar
