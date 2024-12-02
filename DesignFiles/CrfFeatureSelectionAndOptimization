@@ -1,0 +1,32 @@
+CRF MODEL OPTIMIZATION
+
+1.	Run main() within the CSAttributeTaggerTrainer class with the runType variable set to 
+	RUN_TYPE.PRINT_FEATURES.  The parameters 'cueIncludedFeaturesFilePath' and 
+	'scopeIncludedFeaturesFilePath,' should be set to null so that all features generated 
+	by the feature builder are included in the model.
+	
+2.	Next, run main() with the CrfSuiteRunner class with the runType variable set to 
+	SuiteRunnerType.ESTIMATE_PARAMETERS.  The trainingFileName should be the file created
+	in step 1 above.  The 'samples' parameter should be set to 10 (other numbers can be used),
+	and tokenProcessingOptions the same as when the feature file was created in step 1.
+	
+3.	Open up the parameter file created in step 2, and identify features according to whether 
+	a) they were estimated at least 3 times in step 2 (should be 3 or more parameter estimate
+	numbers) b) the average +/- the standard error of the mean crosses 0.  Note that each
+	feature will be associated with each label, and these features are unique.  However, we cannot
+	pick specific features for inclusion or exclusion - we can only include or exclude features
+	without respect to label.  So, we include features where the feature + label for anyone label
+	does not cross 0.  Features where all associated labels cross zero are excluded.
+	
+4.	Create a text file containing all of the features to be included in the model based on the analysis
+	done in step 3.
+	
+5.	Re-run step 1 but set the 'cueIncludedFeaturesFilePath' and 'scopeIncludedFeaturesFilePath,' to the
+	file(s) created in step 4.  (If optimizing cue and scope models, there will be 2 files).
+	
+6.	Re-run steps 2-4 creating yet another text file with just the included features.  At this point, we 
+	will have gone through 2 rounds of feature inclusion/exclusion.  The included feature lists are then
+	used for final training via the CSAttributeTaggerTrainer class, which is run with runType set to 
+	TRAIN_NEGATION_SINGLE and the parameters cueIncludedFeaturesFilePath & scopeIncludedFeaturesFilePath
+	set to the last feature inclusion files (see step 4).
+	

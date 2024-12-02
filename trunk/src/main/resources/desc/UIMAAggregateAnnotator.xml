@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="ResultWriterDescriptor">
+      <import location="/Users/glenn/RapTATFromArchive_130207/RapTAT_Checkout_120514/trunk/resources/desc/ResultWriterDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="PhraseFinderDescriptor">
+      <import location="/Users/glenn/RapTATFromArchive_130207/RapTAT_Checkout_120514/trunk/resources/desc/PhraseFinderDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="TextAnalysisEngineDescriptor">
+      <import location="/Users/glenn/RapTATFromArchive_130207/RapTAT_Checkout_120514/trunk/resources/desc/TextAnalysisEngineDescriptor.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="ConceptMapperDescriptor">
+      <import location="/Users/glenn/RapTATFromArchive_130207/RapTAT_Checkout_120514/trunk/resources/desc/ConceptMapperDescriptor.xml"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>UIMAAggregateAnnotator</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters searchStrategy="language_fallback"/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>TextAnalysisEngineDescriptor</node>
+        <node>PhraseFinderDescriptor</node>
+        <node>ConceptMapperDescriptor</node>
+        <node>ResultWriterDescriptor</node>
+      </fixedFlow>
+    </flowConstraints>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration>
+    <externalResources>
+      <externalResource>
+        <name>Solution</name>
+        <description/>
+        <fileResourceSpecifier>
+          <fileUrl>file://localhost/Users/glenn/_ARapTATSolution.soln</fileUrl>
+        </fileResourceSpecifier>
+        <implementationName>src.main.gov.va.vha09.grecc.raptat.algorithms.AlgorithmSolution</implementationName>
+      </externalResource>
+    </externalResources>
+    <externalResourceBindings>
+      <externalResourceBinding>
+        <key>PhraseFinderDescriptor/Solution</key>
+        <resourceName>Solution</resourceName>
+      </externalResourceBinding>
+      <externalResourceBinding>
+        <key>TextAnalysisEngineDescriptor/Solution</key>
+        <resourceName>Solution</resourceName>
+      </externalResourceBinding>
+      <externalResourceBinding>
+        <key>ConceptMapperDescriptor/Solution</key>
+        <resourceName>Solution</resourceName>
+      </externalResourceBinding>
+    </externalResourceBindings>
+  </resourceManagerConfiguration>
+</analysisEngineDescription>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>UIMAAnnotatedPhraseDescriptor</name>
+  <description/>
+  <version>1.0</version>
+  <vendor/>
+  <imports>
+    <import location="/Users/glenn/RapTATFromArchive_130207/RapTAT_Checkout_120514/trunk/resources/desc/UIMATokenDescriptor.xml"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>src.main.gov.va.vha09.grecc.raptat.uima.annotation_types.UIMAAnnotatedPhrase</name>
+      <description/>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>concept</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>Tokens</name>
+          <description/>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>src.main.gov.va.vha09.grecc.raptat.uima.annotation_types.UIMAToken</elementType>
+          <multipleReferencesAllowed>false</multipleReferencesAllowed>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

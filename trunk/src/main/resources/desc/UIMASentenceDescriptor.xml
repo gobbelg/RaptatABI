@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <name>UIMASentenceDescriptor</name>
+  <description/>
+  <version>1.0</version>
+  <vendor/>
+  <imports>
+    <import location="/Users/glenn/RapTATFromArchive_130207/RapTAT_Checkout_120514/trunk/resources/desc/SourceDocumentInformation.xml"/>
+    <import location="/Users/glenn/RapTATFromArchive_130207/RapTAT_Checkout_120514/trunk/resources/desc/UIMATokenDescriptor.xml"/>
+    <import location="/Users/glenn/RapTATFromArchive_130207/RapTAT_Checkout_120514/trunk/resources/desc/UIMAAnnotatedPhraseDescriptor.xml"/>
+  </imports>
+  <types>
+    <typeDescription>
+      <name>src.main.gov.va.vha09.grecc.raptat.uima.annotation_types.UIMASentence</name>
+      <description/>
+      <supertypeName>uima.tcas.Annotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>SentenceTokens</name>
+          <description/>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>src.main.gov.va.vha09.grecc.raptat.uima.annotation_types.UIMAToken</elementType>
+          <multipleReferencesAllowed>false</multipleReferencesAllowed>
+        </featureDescription>
+        <featureDescription>
+          <name>containsAnnotatedPhrase</name>
+          <description/>
+          <rangeTypeName>uima.cas.Boolean</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>phraseAnnotations</name>
+          <description/>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>src.main.gov.va.vha09.grecc.raptat.uima.annotation_types.UIMAAnnotatedPhrase</elementType>
+          <multipleReferencesAllowed>false</multipleReferencesAllowed>
+        </featureDescription>
+        <featureDescription>
+          <name>sourcePath</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  </types>
+</typeSystemDescription>

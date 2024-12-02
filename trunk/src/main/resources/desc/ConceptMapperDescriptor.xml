@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?><analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>src.main.gov.va.vha09.grecc.raptat.uima.analysisengines.UIMAConceptMapper</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>ConceptMapperDescriptor</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <typeSystemDescription>
+      <imports>
+        <import location="/Users/glenn/RapTATFromArchive_130207/RapTAT_Checkout_120514/trunk/resources/desc/UIMASentenceDescriptor.xml"/>
+        <import location="/Users/glenn/RapTATFromArchive_130207/RapTAT_Checkout_120514/trunk/resources/desc/UIMAAnnotatedPhraseDescriptor.xml"/>
+        <import location="/Users/glenn/RapTATFromArchive_130207/RapTAT_Checkout_120514/trunk/resources/desc/UIMATokenDescriptor.xml"/>
+      </imports>
+    </typeSystemDescription>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs>
+          <type allAnnotatorFeatures="true">src.main.gov.va.vha09.grecc.raptat.uima.annotation_types.UIMASentence</type>
+          <type allAnnotatorFeatures="true">src.main.gov.va.vha09.grecc.raptat.uima.annotation_types.SourceDocumentInformation</type>
+        </inputs>
+        <outputs>
+          <type allAnnotatorFeatures="true">src.main.gov.va.vha09.grecc.raptat.uima.annotation_types.UIMASentence</type>
+          <type allAnnotatorFeatures="true">src.main.gov.va.vha09.grecc.raptat.uima.annotation_types.SourceDocumentInformation</type>
+        </outputs>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>

@@ -1,0 +1,119 @@
+Category	Subtype	RegularExpression
+anatomy	ankle	\bankle\b
+anatomy	arm	\barm\b
+anatomy	other	\b((lower|distal)[ \t]*)?extremit(y|ies)\b
+anatomy	other	\bknee\b
+anatomy	thighcalf	\b((lower|upper|distal|proximal)[ \t]*)?(thigh|calf)\b
+anatomy	toe	\bdigit(al)?\b
+anatomy	toe	\bgreater toe\b
+anatomy	toe	\bgt\b
+anatomy	toe	\btoe\b
+artery	ankle	\bdpa?\b
+artery	ankle	\bpta?\b
+artery	ankle	\ba(nt(erior)?)?\.?[ \t]*t(ib(ial(is)?)?)?\.?[ \t]*(a(rt(ery|eries|ial))?)?(\.|\b)
+artery	ankle	\banterio[ \t]*tib(ial(is)?)?[ \t]*(art(ery|eries|ial)?)?(\.|\b)
+artery	ankle	\bdors(al)?[ \t]*ped(al)?[ \t]*(a(rt(ery|eries|ial)?)?)?(\.|\b)
+artery	ankle	\bp(ost(erior)?)?\.?[ \t]*t(ib(ial(is)?)?)?\.?[ \t]*(a(rt(ery|eries|ial))?)?(\.|\b)
+artery	ankle	\bposterior[ \t]*tib(ial(is)?)?[ \t]*(art(ery|eries|ial)?)?(\.|\b)
+artery	arm	\bbrach((ial)[ \t]*(art(ery|ial)?)?)?(\.|\b)
+artery	unspecified	\bart(er(y|ies|ial))?(\.|\b)
+exercise	exercise	\bexerc?(\.|\b)
+impression	impression	\bimpression\b
+index	index	\b[0-1]\.[0-9]{1,2}\b	#Captures Numbers like 1.2, 0.4, etc
+index	index	(?<=^|[ \t({\[/])\.[0-9]{1,2}\b	#Captures Numbers like .1, .34, etc
+index	index	\b[0-2]\.?(?=([ \t)}\]/]|$))	#Captures numbers like 0, 1., 2, etc
+indexValueType	abi	\b(ankle[ \t]*)?brachial[ \t]*ind(ex|ices)\b
+indexValueType	abi	\ba[ \t]*\/?[ \t]*a[ \t]*(ratio|i)?\b
+indexValueType	abi	\babi[ \t]*[/-][ \t]*rest\b
+indexValueType	abi	\babi[ \t]*\(numeric value\)\b
+indexValueType	abi	\babi[ \t]*value\b
+indexValueType	abi	\babi\'?s?\b
+indexValueType	abi	\babix\b
+indexValueType	abi	\bankle[ \t]*[/-][ \t]*brachial[ \t]*(ind(ex|ices))?\b
+indexValueType	abi	\bankle[ \t]*[\/\-]?[ \t]*arm[ \t]*(press(\.|ure\b)?|ind(ex|ices)?\b)
+indexValueType	abi	\bbrachial.?index\b
+indexValueType	tbi	\b(toe|digit(al)?)[ \t]*[\/\-]?[ \t]*(arm|brachial)[ \t]*(press(\.|ure\b)?|ind(ex|ices)\b)
+indexValueType	tbi	\b(toe|digit(al)?)[ \t]*abis?\b
+indexValueType	tbi	\b\d-\d[ \t]*toes\b
+indexValueType	tbi	\bd\.?b\.?i(\.|\b)
+indexValueType	tbi	\bhallux[ \t]*[/-][ \t]*brachial\b
+indexValueType	tbi	\btbi\'?s?\b
+indexValueType	tbi	\btoe[ \t]*[/-][ \t]*brachial[ \t]*ind(ex|ices)\b
+indexValueType	tbi	\btoe[ \t]*brachial[ \t]*ind(ex|ices)\b
+indexValueType	tbi	\btoe[ \t]*ind(ex|ices)\b
+indexValueType	tbi	\btoe[ \t]*press(\.|ure\b)?
+indexValueType	tbi	\btoe-brachial[ \t]*ind(ex|ices)\b
+indexValueType	tbi	\b(toe|digit(al)?)[ \t]*[\/\-]?[ \t]*arm[ \t]*(press\.?(ure)?|ind(ex|ices)\b)
+laterality	bilateral	\bb\/l\b
+laterality	bilateral	\bb(i|l)\b
+laterality	bilateral	\bbilateral(ly)?\b
+laterality	bilateral	\bboth[ \t]*extremities\b
+laterality	bilateral	\bboth[ \t]*-?[ \t]*sides\b
+laterality	bilateral	\bright[ \t]*and[ \t]*left[ \t]*(side(s|d)?)?\b
+laterality	left	\b(?<=(\d|\b))l(:|-|\.|~|;|\b|\.:|\)|p\b|d\b)
+laterality	left	\bl(ft)?(\.|\b)
+laterality	left	\bl(?=dp|pt|le|\b)
+laterality	left	\bleft\b
+laterality	left	\bleft-?
+laterality	left	\bleft[ \t]*\-?[ \t]*sided?\b
+laterality	left	\blf?t(:|-|\.|~|;|\b|\.:)
+laterality	right	(?<=(\d|\b))r(:|-|\.|~|;|\b|\)|:|p\b|d\b)
+laterality	left	\brt?(\.|\b)
+laterality	left	\br(?=dp|pt|le|\b)
+laterality	right	\bright\b
+laterality	right	\bright[ \t]*\-?[ \t]*sided?\b
+laterality	right	\brt(:|-|\.|~|;|\b|\.:)
+negativeIndexinformation	flow	\bflow\b
+negativeIndexinformation	flow	\bvelocity\b
+negativeIndexinformation	indexValueInterpretation	\b(borderline[ \t]*)?normal\b
+negativeIndexinformation	indexValueInterpretation	\b(mild(ly)?|mod(\.|erate(ly)?)?)[ \t]*(obstruct(ed|ion)?|reduc(ed|tion))\b
+negativeIndexinformation	indexValueInterpretation	\bacceptable\b
+negativeIndexinformation	indexValueInterpretation	\bdiminished\b
+negativeIndexinformation	indexValueInterpretation	\bmild[ \t]*((to|\/)?[ \t]*moderate)?\b
+negativeIndexinformation	indexValueInterpretation	\bmod(\.|erate)?\b
+negativeIndexinformation	indexValueInterpretation	\bmod(\.|erately)?[ \t]*severe\b
+negativeIndexinformation	indexValueInterpretation	\bmoderate[ \t]*(to|\/)?[ \t]*mild\b
+negativeIndexinformation	indexValueInterpretation	\bnot?[ \t]*sig(\b|\.|nificant)
+negativeIndexinformation	indexValueInterpretation	\bobstruction\b
+negativeIndexinformation	indexValueInterpretation	\bsev(\b|\.|erity\b)?
+negativeIndexinformation	indexValueInterpretation	\bsevere[ \t]*(pad|ischemia|obstruction)\b
+negativeIndexinformation	indexValueInterpretation	\bsevere[ \t]*obstruction\b
+negativeIndexinformation	indexValueInterpretation	\bseverely[ \t]*obstructed\b
+negativeIndexinformation	listIndex	\b(?<!\([ \t]{0,4})\d{1,2}[ \t]*\)(\b|[ \t]+|$)
+negativeIndexinformation	miscellaneous	\b(?:\d[ \t]*)x(?:[ \t]*\d)\b
+negativeIndexinformation	miscellaneous	\bplaques?\b
+negativeIndexinformation	nonIndexArtery	\b(common[ \t]*)?femoral[ \t]*art(er(y|ies|ial)?)?\b
+negativeIndexinformation	nonIndexArtery	\b(distal[ \t]*)?popliteal[ \t]*(art(er(y|ies|ial))?)?\b
+negativeIndexinformation	nonIndexArtery	\b(ext|int)\.?(ernal)?[ \t]*carotid[ \t]*(art(er(y|ies|ial))?)?\b
+negativeIndexinformation	nonIndexArtery	\bc\.?f(\.|\b|a(\.|\b))
+negativeIndexinformation	nonIndexArtery	\bfem\b
+negativeIndexinformation	nonIndexArtery	\bi\.?c(\.|\b|a(\.|\b))
+negativeIndexinformation	nonIndexArtery	\blower[ \t]*extremity[ \t]*(art(er(y|ies|ial))?)?\b
+negativeIndexinformation	nonIndexArtery	\bperoneal[ \t]*(art(er(y|ies|ial))?)?\b
+negativeIndexinformation	nonIndexArtery	\bpop(\.|\b)
+negativeIndexinformation	nonIndexArtery	\bprofundal[ \t]*(art(er(y|ies|ial))?)?\b
+negativeIndexinformation	nonIndexArtery	\bs\.?f\.?a(\.|\b)
+negativeIndexinformation	otherIndexType	\b(radial|ulnar)[ \t]*(ind(ex|ices))?\b
+negativeIndexinformation	unit	\b(mm|cm)([ \t]*(\/|per)?[ \t]*(s(ec)?))?\b
+negativeIndexinformation	unit	\bdiameter\b
+negativeIndexinformation	unit	\bhr\b
+negativeIndexinformation	unit	\bmin\b
+negativeIndexinformation	unit	\bmls?([ \t]*(\/|per)?[ \t]*(m(in)?))?\b
+negativeIndexinformation	unit	\bmm[ \t]*hg\b
+negativeIndexinformation	unit	\bsec\b
+nonCompressible	noncompressible	\b(un|no(n|t)|im)[ \t]*\-?[ \t]*compressible\b
+nonCompressible	noncompressible	\bcalcifi(ed|cations?)\b
+nonCompressible	noncompressible	\bcalcified\b
+pressure	pressureankle	\bankle[ \t]*(arter(y|ial))?[ \t]*(systolic)?[ \t]*(b\/?p\b|((blood[ \t]*)?press(\b|\.|ures?\b)?))
+pressure	pressureankle	\bdorsalis[ \t]*pedis[ \t]*(arter(y|ial))?[ \t]*(systolic)?[ \t]*(b\/?p\b|((blood[ \t]*)?press(\b|\.|ures?\b)?))
+pressure	pressureankle	\bposterior[ \t]*tibial[ \t]*(arter(y|ial))?[ \t]*(systolic)?[ \t]*(b\/?p\b|((blood[ \t]*)?press(\b|\.|ures?\b)?))
+pressure	pressuretoe	\b(toe|digit(al)?)[ \t]*pressures?\b
+pressure	pressureankle	\bbrachial[ \t]*(arm|arter(y|ial))?[ \t]*(systolic)?[ \t]*(b\/?p\b|((blood[ \t]*)?press(\b|\.|ures?\b)?))
+pressure	pressuretoe	\bg\.?t\.?p(\.|\b)
+pressure	pressureunspecified	\bpressures?\b
+temporalreference	date	\b(0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2}\b
+temporalreference	date	\b(jan(\.|uary)?|feb(\.|ruary)?|mar(\.|ch)?|apr(\.|il)?|may|jun(\.|e)|jul(\.|y)?|aug(\.|ust)?|sep(\.|tember)?|oct(\.|ober)?|nov(\.|ember)|dec(\.|ember)?)[ \t]+(0?[1-9]|[12][0-9]|3[01])[ \t]*[,][ \t]*(19|20)?[0-9]{2}\b
+temporalreference	historical	\bearlier\b
+temporalreference	historical	\bprevious(ly)?\b
+temporalreference	historical	\bprior\b
+temporalreference	historical	\btoday\b

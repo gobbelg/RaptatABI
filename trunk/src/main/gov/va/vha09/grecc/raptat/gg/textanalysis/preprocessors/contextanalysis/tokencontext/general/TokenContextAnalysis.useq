@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence-diagram version="1.1.8" icons="true" automaticImage="PNG">  
+  <object id="1" language="java" 
+    name="src.main.gov.va.vha09.grecc.raptat.gg.textanalysis.preprocessors.contextanalysis.tokencontext.TokenContextAnalyzer" 
+    project="RapTAT_Checkout_SanjibForReview" 
+    file="/RapTAT_Checkout_SanjibForReview/trunk/src/main/gov/va/vha09/grecc/raptat/gg/textanalysis/preprocessors/contextanalysis/tokencontext/TokenContextAnalyzer.java" 
+    binary="false" label="tokenContextAnalyzer" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="2">      
+      <position height="448" width="0" x="0" y="91"/>    
+    </execution>  
+  </object>  
+  <object id="5" language="java" 
+    name="src.main.gov.va.vha09.grecc.raptat.gg.textanalysis.preprocessors.contextanalysis.tokencontext.TokenContextAnalyzer" 
+    project="RapTAT_Checkout_SanjibForReview" 
+    file="/RapTAT_Checkout_SanjibForReview/trunk/src/main/gov/va/vha09/grecc/raptat/gg/textanalysis/preprocessors/contextanalysis/tokencontext/TokenContextAnalyzer.java" 
+    binary="false" label="tokenContextAnalyzer1" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="4">      
+      <position height="406" width="0" x="0" y="112"/>    
+    </execution>    
+    <execution id="11">      
+      <position height="21" width="0" x="0" y="476"/>    
+    </execution>  
+  </object>  
+  <object id="12" language="java" 
+    name="src.main.gov.va.vha09.grecc.raptat.gg.textanalysis.preprocessors.contextanalysis.tokencontext.general.GenBoundaryMarker" 
+    project="RapTAT_Checkout_SanjibForReview" 
+    file="/RapTAT_Checkout_SanjibForReview/trunk/src/main/gov/va/vha09/grecc/raptat/gg/textanalysis/preprocessors/contextanalysis/tokencontext/general/GenBoundaryMarker.java" 
+    binary="false" label="genContextBoundaryMarker" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>    
+    <execution id="7">      
+      <position height="21" width="0" x="0" y="160"/>    
+    </execution>    
+    <execution id="9">      
+      <position height="21" width="445" x="837" y="304"/>    
+    </execution>  
+  </object>  
+  <object id="13" language="java" 
+    name="src.main.gov.va.vha09.grecc.raptat.gg.textanalysis.preprocessors.contextanalysis.tokencontext.TokenMarker" 
+    project="RapTAT_Checkout_SanjibForReview" 
+    file="/RapTAT_Checkout_SanjibForReview/trunk/src/main/gov/va/vha09/grecc/raptat/gg/textanalysis/preprocessors/contextanalysis/tokencontext/TokenMarker.java" 
+    binary="false" label="tokenContextMarker" type="class" autoSize="true">    
+    <position height="0" width="0" x="0" y="0"/>  
+  </object>  
+  <message id="3">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="4"/>  
+  </message>  
+  <message id="6" operation="getConceptList():java.util.Set&lt;String&gt;">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="7"/>  
+  </message>  
+  <message id="8">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="9"/>  
+  </message>  
+  <message id="10">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="11"/>  
+  </message>
+</sequence-diagram>

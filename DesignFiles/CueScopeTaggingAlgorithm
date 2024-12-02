@@ -1,0 +1,12 @@
+Here, we want to first find the cues using the existing cue model.  Then for any cues found, we
+want to add the cue feature to the appropriate tokens.  Then, for sentences having cues, we want to find
+the scope.  Finally, we want to add attributes to annotations that are "in scope".  Steps in this process are:
+
+1.	Identify the sentences that contain concepts of interest.  These will be used to see if cues exist.  To do 
+	this, we first select all sentences that have concepts of interest as shown by an import of xml documents.
+		
+2.	Next we run the sentences through a Mallet-based feature builder to determine the features of
+	all tokens in each sentence, using the AssertionFeaturePipe to insert the most important 
+	features.
+	
+3.	We then run the features through the 

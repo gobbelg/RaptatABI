@@ -1,0 +1,67 @@
++++++++++++++++++++++++++++++++++++++++
+PREVIOUS METHOD
++++++++++++++++++++++++++++++++++++++++
+	For training, we first put the sentences and their tokens through a Mallet-based feature builder.
+	- To do this, we first select all sentences that have concepts of interest as shown by an import
+		of xml documents.
+	- Next we exclude sentences from the ones choseen that do not have both cue and scope in the 
+		same sentence.  Sentences with neither cue or scope ARE kept because, when using the system
+		for attribute determination of concepts, we will be looking for cues in all sentences with 
+		to determine the attributes of those concepts.
+	- Next we run the sentences through a Mallet-based feature builder to determine the features of
+		all tokens in each sentence, using the AssertionFeaturePipe to insert the most important 
+		features.
+	- These features are then converted into 'Attributes' (a CRFSuite object) which are stored in 
+		'Items' (another CRFSuite object) with one Item per token and several attributes per token
+	- The Items for all tokens in a sentence are stored in an ItemSequence.  We add one extra attribute
+		to the end of each Item in the ItemSequence for each sentence, which can later be modified and
+		used to denote that a token has the feature 'ISNEGATIONCUE'
+
+
++++++++++++++++++++++++++++++++++++++++
+NEW TRAINING METHOD
++++++++++++++++++++++++++++++++++++++++
+In this modified method, for training to find cue and scope, we skip over the feature building for scope and
+just use the features created when we created features for cue sentences.  We will need to select a subset
+of the cue sentences for scope training because, for scope training, we only want sentence that have a cue 
+and scope as opposed to those that have a concept of interest as for the cues.
+
+1.	As before, we first select all sentences that have concepts of interest as shown by an import
+	of xml documents.
+
+2.	Next we exclude sentences from the ones chosen that do not have both cue and scope in the 
+	same sentence.  Sentences with neither cue or scope ARE kept because, when using the system
+	for attribute determination of concepts, we will be looking for cues in all sentences with 
+	to determine the attributes of those concepts.  These are the TRAINING_SENTENCES.
+
+3.	At the same time, we select the CUE_PHRASES, whose tokens will be marked to allow for determining the token 
+	label during feature building.
+
+4.	Next, we identify a subset of the initially selected sentences to use for scope training, the SCOPE_PHRASES.
+	The sentences in this scope subset are those that contain a negative assertion status cue.  We save these 
+	as indices so we can get the corresponding items from the TokenSequence and StringList for the cue training 
+	sentences.
+
+5.	Next, we mark all the CUE_PHRASES and SCOPE_PHRASES with cue and scope specific begin and inside tags.
+
+6.	We then run the sentences through a Mallet-based feature builder to determine the features of
+	all tokens in each sentence, using the AssertionFeaturePipe to insert the most important 
+	features.  At this points, tokens within CUE_PHRASES or SCOPE_PHRASES will be labeled with cue and scope 
+	specific labels.  
+
+7.	The resulting TokenSequence instance and StringList instance for each sentence is converted to an ItemSequence and 
+	StringList that will be used to train CRFSuite and create a model to identify cues.  As part of the process of doing
+	this conversion,  we include string-matching filters to identify and pull out attributes/features that will be used
+	for setting to cue features once the cue training is done.  An additional part of this process StringLists to change 
+	from begin or inside to outside (cue token labels) and from outside to begin and inside (scope 
+	token labels) after training for cue.
+
+8.	Train to detect using the TokenSquence and StringList instances and keep the model.
+
+9.	Reset the labels as indicated from 2 steps back (cue labels to outside, scope labels to being and inside).  
+
+10.	
+
+10.	Somehow we need to pull out scope sentence TokenSequence and StringList instances.
+	for cues.
+	

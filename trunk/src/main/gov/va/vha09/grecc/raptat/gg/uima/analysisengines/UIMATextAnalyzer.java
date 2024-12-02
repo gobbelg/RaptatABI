@@ -1,0 +1,73 @@
+/** */
+package src.main.gov.va.vha09.grecc.raptat.gg.uima.analysisengines;
+
+import java.util.List;
+import java.util.Optional;
+import org.apache.uima.UimaContext;
+import org.apache.uima.analysis_component.AnalysisComponent;
+import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
+import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
+import org.apache.uima.cas.FSIterator;
+import org.apache.uima.jcas.JCas;
+import org.apache.uima.jcas.tcas.Annotation;
+import org.apache.uima.resource.ResourceAccessException;
+import org.apache.uima.resource.ResourceInitializationException;
+import src.main.gov.va.vha09.grecc.raptat.gg.algorithms.probabilistic.sequenceidentification.probabilistic.ProbabilisticTSFinderSolution;
+import src.main.gov.va.vha09.grecc.raptat.gg.datastructures.annotationcomponents.AnnotatedPhrase;
+import src.main.gov.va.vha09.grecc.raptat.gg.textanalysis.RaptatDocument;
+import src.main.gov.va.vha09.grecc.raptat.gg.textanalysis.TextAnalyzer;
+import src.main.gov.va.vha09.grecc.raptat.gg.uima.annotation_types.SourceDocumentInformation;
+import src.main.gov.va.vha09.grecc.raptat.gg.uima.annotation_types.UIMASentence;
+import src.main.gov.va.vha09.grecc.raptat.gg.uima.makers.UIMASentenceMaker;
+
+/**
+ * ******************************************************
+ *
+ * @author Glenn Gobbel - Aug 22, 2013 *****************************************************
+ */
+public class UIMATextAnalyzer extends JCasAnnotator_ImplBase {
+
+  private TextAnalyzer theAnalyzer = new TextAnalyzer();
+  private UIMASentenceMaker sentenceMaker = new UIMASentenceMaker();
+
+
+  /** @see AnalysisComponent#initialize(UimaContext) */
+  @Override
+  public void initialize(UimaContext aContext) throws ResourceInitializationException {
+    super.initialize(aContext);
+    // get a reference to the String Map Resource
+    try {
+      ProbabilisticTSFinderSolution theSolution =
+          (ProbabilisticTSFinderSolution) getContext().getResourceObject("Solution");
+      this.theAnalyzer.setTokenProcessingParameters(theSolution.getTokenTrainingOptions());
+    } catch (ResourceAccessException e) {
+      throw new ResourceInitializationException(e);
+    }
+  }
+
+
+  /**
+   * *********************************************************** OVERRIDES PARENT METHOD
+   *
+   * @param arg0
+   * @throws AnalysisEngineProcessException
+   * @author Glenn Gobbel - Aug 22, 2013 ***********************************************************
+   */
+  @Override
+  public void process(JCas inputJCas) throws AnalysisEngineProcessException {
+    // String theDocURI = ( (SourceDocumentInformation) inJCas ).getUri();
+    RaptatDocument theDocument =
+        this.theAnalyzer.processText(inputJCas.getDocumentText(), Optional.of("test"));
+
+    FSIterator<Annotation> sourceIterator =
+        inputJCas.getAnnotationIndex(SourceDocumentInformation.type).iterator();
+    SourceDocumentInformation sourceInfo = (SourceDocumentInformation) sourceIterator.next();
+    String sourcePath = sourceInfo.getUri();
+
+    List<AnnotatedPhrase> theSentences = theDocument.getActiveSentences();
+    for (AnnotatedPhrase curPhrase : theSentences) {
+      UIMASentence newPhrase = this.sentenceMaker.newAnnotation(inputJCas, curPhrase, sourcePath);
+      newPhrase.addToIndexes(inputJCas);
+    }
+  }
+}

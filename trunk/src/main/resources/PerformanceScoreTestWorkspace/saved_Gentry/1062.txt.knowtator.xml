@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<annotations textSource="1062.txt">
+    <annotation>
+        <mention id="EHOST_Instance_208" />
+        <annotator id="eHOST_2010">Hillard</annotator>
+        <span start="13" end="22" />
+        <spannedText>Bariatric</spannedText>
+        <creationDate>Sun Sep 17 12:56:24 CDT 2017</creationDate>
+    </annotation>
+    <stringSlotMention id="EHOST_Instance_215">
+        <mentionSlot id="Experiencer" />
+        <stringSlotMentionValue value="patient" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_216">
+        <mentionSlot id="Time Frame" />
+        <stringSlotMentionValue value="current" />
+    </stringSlotMention>
+    <classMention id="EHOST_Instance_208">
+        <hasSlotMention id="EHOST_Instance_215" />
+        <hasSlotMention id="EHOST_Instance_216" />
+        <mentionClass id="1. LIVING ALONE">Bariatric</mentionClass>
+    </classMention>
+    <annotation>
+        <mention id="EHOST_Instance_209" />
+        <annotator id="eHOST_2010">Hillard</annotator>
+        <span start="174" end="194" />
+        <spannedText>Transcription Sample</spannedText>
+        <creationDate>Tue Sep 19 13:13:52 CDT 2017</creationDate>
+    </annotation>
+    <stringSlotMention id="EHOST_Instance_217">
+        <mentionSlot id="Assertion" />
+        <stringSlotMentionValue value="positive" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_218">
+        <mentionSlot id="Experiencer" />
+        <stringSlotMentionValue value="patient" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_219">
+        <mentionSlot id="Time Frame" />
+        <stringSlotMentionValue value="current" />
+    </stringSlotMention>
+    <classMention id="EHOST_Instance_209">
+        <hasSlotMention id="EHOST_Instance_217" />
+        <hasSlotMention id="EHOST_Instance_218" />
+        <hasSlotMention id="EHOST_Instance_219" />
+        <mentionClass id="2. FAMILY_SUPPORT">Transcription Sample</mentionClass>
+    </classMention>
+    <annotation>
+        <mention id="EHOST_Instance_210" />
+        <annotator id="eHOST_2010">Hillard</annotator>
+        <span start="418" end="441" />
+        <spannedText>attempt surgical weight</spannedText>
+        <creationDate>Sun Sep 17 19:06:23 CDT 2017</creationDate>
+    </annotation>
+    <stringSlotMention id="EHOST_Instance_220">
+        <mentionSlot id="Assertion" />
+        <stringSlotMentionValue value="positive" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_221">
+        <mentionSlot id="Experiencer" />
+        <stringSlotMentionValue value="patient" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_222">
+        <mentionSlot id="Time Frame" />
+        <stringSlotMentionValue value="current" />
+    </stringSlotMention>
+    <classMention id="EHOST_Instance_210">
+        <hasSlotMention id="EHOST_Instance_220" />
+        <hasSlotMention id="EHOST_Instance_221" />
+        <hasSlotMention id="EHOST_Instance_222" />
+        <mentionClass id="1. LIVING ALONE">attempt surgical weight</mentionClass>
+    </classMention>
+    <annotation>
+        <mention id="EHOST_Instance_211" />
+        <annotator id="eHOST_2010">Hillard</annotator>
+        <span start="308" end="326" />
+        <spannedText>51-year-old female</spannedText>
+        <creationDate>Mon Sep 18 17:35:38 CDT 2017</creationDate>
+    </annotation>
+    <stringSlotMention id="EHOST_Instance_223">
+        <mentionSlot id="Experiencer" />
+        <stringSlotMentionValue value="patient" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_224">
+        <mentionSlot id="Time Frame" />
+        <stringSlotMentionValue value="current" />
+    </stringSlotMention>
+    <classMention id="EHOST_Instance_211">
+        <hasSlotMention id="EHOST_Instance_223" />
+        <hasSlotMention id="EHOST_Instance_224" />
+        <mentionClass id="2. FAMILY_SUPPORT">51-year-old female</mentionClass>
+    </classMention>
+    <annotation>
+        <mention id="EHOST_Instance_212" />
+        <annotator id="eHOST_2010">Hillard</annotator>
+        <span start="831" end="862" />
+        <spannedText>done numerous commercial weight</spannedText>
+        <creationDate>Mon Sep 18 17:38:54 CDT 2017</creationDate>
+    </annotation>
+    <stringSlotMention id="EHOST_Instance_225">
+        <mentionSlot id="Experiencer" />
+        <stringSlotMentionValue value="patient" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_226">
+        <mentionSlot id="Time Frame" />
+        <stringSlotMentionValue value="current" />
+    </stringSlotMention>
+    <complexSlotMention id="EHOST_Instance_227">
+        <mentionSlot id="DepressedByFamily" />
+        <complexSlotMentionValue value="EHOST_Instance_213" />
+    </complexSlotMention>
+    <classMention id="EHOST_Instance_212">
+        <hasSlotMention id="EHOST_Instance_225" />
+        <hasSlotMention id="EHOST_Instance_226" />
+        <hasSlotMention id="EHOST_Instance_227" />
+        <mentionClass id="7. DEPRESSION">done numerous commercial weight</mentionClass>
+    </classMention>
+    <annotation>
+        <mention id="EHOST_Instance_213" />
+        <annotator id="eHOST_2010">Hillard</annotator>
+        <span start="1100" end="1116" />
+        <spannedText>exercise program</spannedText>
+        <creationDate>Mon Sep 18 17:39:11 CDT 2017</creationDate>
+    </annotation>
+    <stringSlotMention id="EHOST_Instance_228">
+        <mentionSlot id="Experiencer" />
+        <stringSlotMentionValue value="patient" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_229">
+        <mentionSlot id="Time Frame" />
+        <stringSlotMentionValue value="current" />
+    </stringSlotMention>
+    <classMention id="EHOST_Instance_213">
+        <hasSlotMention id="EHOST_Instance_228" />
+        <hasSlotMention id="EHOST_Instance_229" />
+        <mentionClass id="2. FAMILY_SUPPORT">exercise program</mentionClass>
+    </classMention>
+    <annotation>
+        <mention id="EHOST_Instance_214" />
+        <annotator id="eHOST_2010">Hillard</annotator>
+        <span start="149" end="156" />
+        <spannedText>gastric</spannedText>
+        <creationDate>Tue Sep 19 13:13:30 CDT 2017</creationDate>
+    </annotation>
+    <stringSlotMention id="EHOST_Instance_230">
+        <mentionSlot id="Experiencer" />
+        <stringSlotMentionValue value="patient" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_231">
+        <mentionSlot id="Time Frame" />
+        <stringSlotMentionValue value="current" />
+    </stringSlotMention>
+    <complexSlotMention id="EHOST_Instance_232">
+        <mentionSlot id="DepressedByFamily" />
+        <complexSlotMentionValue value="EHOST_Instance_209" />
+    </complexSlotMention>
+    <classMention id="EHOST_Instance_214">
+        <hasSlotMention id="EHOST_Instance_230" />
+        <hasSlotMention id="EHOST_Instance_231" />
+        <hasSlotMention id="EHOST_Instance_232" />
+        <mentionClass id="7. DEPRESSION">gastric</mentionClass>
+    </classMention>
+    <eHOST_Adjudication_Status version="1.0">
+        <Adjudication_Selected_Annotators version="1.0" />
+        <Adjudication_Selected_Classes version="1.0" />
+        <Adjudication_Others>
+            <CHECK_OVERLAPPED_SPANS>false</CHECK_OVERLAPPED_SPANS>
+            <CHECK_ATTRIBUTES>false</CHECK_ATTRIBUTES>
+            <CHECK_RELATIONSHIP>false</CHECK_RELATIONSHIP>
+            <CHECK_CLASS>false</CHECK_CLASS>
+            <CHECK_COMMENT>false</CHECK_COMMENT>
+        </Adjudication_Others>
+    </eHOST_Adjudication_Status>
+</annotations>
+

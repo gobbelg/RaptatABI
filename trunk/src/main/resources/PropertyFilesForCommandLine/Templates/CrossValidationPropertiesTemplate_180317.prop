@@ -1,0 +1,352 @@
+#=========================================================================================================
+# Specify the options for a given parameter by preceding its descriptor with either
+# a "short" (generally one letter) or "long" option of those listed below preceded by a hyphen.  In some 
+# cases, the use of upper and lower case in the descriptors must be carefully folllowed.  This is generally
+# necessary when describing file paths or specifying particular java classes.  Also, some descriptors have to 
+# be surrounded by quotes for proper parsing. Quotes can always be added but are unnecessary in many cases.
+# Finally, some parameters will take multiple descriptors and require a specific character to denote how the 
+# descriptors are delimited.  Specification of the requirements for each descriptor in terms of use of lower 
+# and upper case, quotes, multiple descriptors, and descriptor delimiters is provided below. 
+#=========================================================================================================
+
+
+#=============================================
+# Property settings use "long options"
+#=============================================
+# LONGOPTION		ANNOTATION_APP_LONGOPT = "annotationApp";
+# LONGOPTION		ANNOTATION_GROUP_POSTPROCESSOR_LONGOPT = "annotationPostProcessorDescriptors";
+# LONGOPTION		ATTRIBUTE_CONFLICT_MANAGERS_LONGOPT = "attributeConflictManagers";
+# LONGOPTION		ATTRIBUTE_TAGGER_PATHS_LONGOPT = "attributeTaggers";
+# LONGOPTION		CONTEXT_SIFTER_FILE_LONGOPT = "contextSifterFilePath";
+# LONGOPTION		CONTEXT_SIFTER_TEXT_LONGOPT = "contextSifterText";
+# LONGOPTION		DICTIONARY_FILEPATH_LONGOPT = "dictionaryFilePath";
+# LONGOPTION		HELP_LONGOPT = "help";
+# LONGOPTION		PROPERTIES_PARSE_LONGOPT = "propertiesFile";
+# LONGOPTION		SCHEMA_FILEPATH_LONGOPT = "schemaFilePath";
+# LONGOPTION 		SCORING_CONCEPTS_FILEPATH_LONGOPTI = "scoringConceptsFilePath"; 
+# LONGOPTION		SECTION_MATCH_FILE_LONGOPT = "sectionMatchFilePath";
+# LONGOPTION		SECTION_MATCH_TEXT_LONGOPT = "sectionMatchText";
+# LONGOPTION		SENTENCE_CONTEXT_ANALYZER_FILE_LONGOPT = "sentenceContextAnalyzerFile";
+# LONGOPTION		SENTENCE_CONTEXT_ANALYZER_TEXT_LONGOPT = "sentenceContextAnalyzerText";
+# LONGOPTION		SENTENCE_FILTER_LONGOPT = "sentenceFilters";
+# LONGOPTION		SENTENCE_MATCH_FILE_LONGOPT = "sentenceMatchFilePath";
+# LONGOPTION		SENTENCE_MATCH_TEXT_LONGOPT = "sentenceMatchText";
+# LONGOPTION		START_INDEX_LONGOPT = "startIndex";
+# LONGOPTION		STOP_INDEX_LONGOPT = "stopIndex";
+# LONGOPTION		TESTING_DIRECTORY_FILEPATH_LONGOPT = "testingDirectoryFilePath";
+# LONGOPTION		TOKEN_SEQUENCE_FINDER_METHOD_LONGOPT = "tokenSequenceFinderMethod";
+# LONGOPTION		TRAINING_CONCEPTS_FILEPATH_LONGOPT = "trainingConceptsFilePath";
+# LONGOPTION		TRAINING_DATA_FILEPATH_LONGOPT = "trainingDataFilePath";
+# LONGOPTION		TRAINING_GROUP_SIZE_LONGOPT = "trainingGroupSize";
+#=============================================
+
+
+#=============================================
+# Property settings use "short options"
+#=============================================
+# SHORTOPTION	ANNOTATION_APP_SHORTOPT = "a";
+# SHORTOPTION	ANNOTATION_GROUP_POSTPROCESSOR_SHORTOPT = "t";
+# SHORTOPTION	ATTRIBUTE_CONFLICT_MANAGERS_SHORTOPT = "g";
+# SHORTOPTION	ATTRIBUTE_TAGGER_PATHS_SHORTOPT = "b";
+# SHORTOPTION	CONTEXT_SIFTER_FILE_SHORTOPT = "f";
+# SHORTOPTION	CONTEXT_SIFTER_TEXT_SHORTOPT = "e";
+# SHORTOPTION	DICTIONARY_FILEPATH_SHORTOPT = "d";
+# SHORTOPTION	HELP_SHORTOPT = "h";
+# SHORTOPTION	PROPERTIES_PARSE_SHORTOPT = "p";
+# SHORTOPTION	SCHEMA_FILEPATH_SHORTOPT = "s";
+# SHORTOPTION	SCORING_CONCEPTS_FILEPATH_SHORTOPT = "l";
+# SHORTOPTION	SECTION_MATCH_FILE_SHORTOPT = "w";
+# SHORTOPTION	SECTION_MATCH_TEXT_SHORTOPT = "v";
+# SHORTOPTION	SENTENCE_CONTEXT_ANALYZER_FILE_SHORTOPT = "n";
+# SHORTOPTION	SENTENCE_CONTEXT_ANALYZER_TEXT_SHORTOPT = "k";
+# SHORTOPTION	SENTENCE_FILTER_SHORTOPT = "i";
+# SHORTOPTION	SENTENCE_MATCH_FILE_SHORTOPT = "z";
+# SHORTOPTION	SENTENCE_MATCH_TEXT_SHORTOPT = "y";
+# SHORTOPTION	START_INDEX_SHORTOPT = "x";
+# SHORTOPTION	STOP_INDEX_SHORTOPT = "j";
+# SHORTOPTION	TESTING_DIRECTORY_FILEPATH_SHORTOPT = "q";
+# SHORTOPTION	TOKEN_SEQUENCE_FINDER_METHOD_SHORTOPT = "m";
+# SHORTOPTION	TRAINING_CONCEPTS_FILEPATH_SHORTOPT = "c";
+# SHORTOPTION	TRAINING_DATA_FILEPATH_SHORTOPT = "r";
+# SHORTOPTION	TRAINING_DATA_FILEPATH_SHORTOPT = "r";
+# SHORTOPTION	TRAINING_GROUP_SIZE_SHORTOPT = "u";
+#=============================================
+
+
+
+#=============================================
+# Special Command Line Property Options
+# (Not generally used within a property file itself)
+#=============================================
+
+# Path to the file to use for parsing the properties File.  The file has the settings of properties to use during RapTAT training.
+# This option is included here for example purposes only as this file itself is a properties file.
+# Generally, the -p option would be set via the command line in calling the main method the TokenSequenceSolutionTrainer class. 
+# 
+# Property descriptor requires proper upper and lower case: TRUE
+# Property descriptor must be surrounded by quotes: TRUE if spaces in path included after -p option 
+#
+# EXAMPLE: If the class were within a jar called RapTAT located
+# within the directory C:\java\Myclasses\Raptat.jar, you would use:
+# java -classpath C:\java\MyClasses\Raptat.jar src.main.gov.va.vha09.grecc.raptat.gg.analysis.crossvalidate.PhraseIDCrossValidationAnalyzer -p "FullPathToPropertiesFileDirectory/CrossValidationPropertiesTemplate_180305.prop"
+
+
+# Show the help for running the TokenSequenceSolutionTrainer class and the available parameter settings
+#
+# EXAMPLE: If the class is within a jar called RapTAT located within the directory C:\java\Myclasses\Raptat.jar, you would use:
+# java -classpath C:\java\MyClasses\Raptat.jar src.main.gov.va.vha09.grecc.raptat.gg.core.training.PhraseIDCrossValidationAnalyzer -h
+
+#=============================================
+
+
+
+#=============================================
+# REQUIRED property options
+#=============================================
+
+# Path to training data file with groups for training. The training data file
+# should be a .csv file with full paths to the text files in the first column
+# and full paths to xml-based annotation files in the second column.  The first
+# row is assumed to contain headers and is ignored, so no paths should go in 
+# row 1.
+#
+# Property descriptor requires proper upper and lower case: TRUE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: FALSE
+#
+# EXAMPLE: -r "H:\AllFolders\ResAppProjects\ORD_Matheny_201406009D_Cirrhosis\Glenn\CrossValidation\TrainingTxtAndXml\BlocksForRadiologyCrossValidation.csv"
+
+
+# Path to schema file
+#
+# Property descriptor requires proper upper and lower case: TRUE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: FALSE
+#
+# EXAMPLE: -s "H:\AllFolders\ResAppProjects\ORD_Matheny_201406009D_Cirrhosis\Glenn\CrossValidation\projectschema.xml"
+
+# Start index for options for running cv
+#
+# Property descriptor requires proper upper and lower case: NOT APPLICABLE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: FALSE
+-x 56
+
+# Stop index for options for running cv (option at stop index is exclude)
+#
+# Property descriptor requires proper upper and lower case: NOT APPLICABLE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: FALSE
+-j 57
+
+#=============================================
+# OPTIONAL Property Options
+#=============================================
+
+# Full path to the directory of xml files containing the annotations used for testing 
+# during cross-validation.  Generally, with cross-validation,the same files will be 
+# used for both training and testing.  And, if this property is not specified, then 
+# the same files will be used.  However,there may be situations where it is necessary 
+# to have a separate group of annotations for testing.  For example, in the case of 
+# location of an organ, cross-validation may first be run to just identify candidate
+# location annotations.  We may be interested in only using the sentences with
+# locations for  training, and when used on the non-training data, the model will find
+# multiple instances of location that may not correspond to those we are interested
+# in. So, recall would be high but precision low.  Cross-validation could then be
+# run again to find the item/organ associated the location.  One could then filter the 
+# location annotations so 
+# that only the ones connected with an organ would be kept.  The now filtered locations
+# could be tested against the files in the 'testing directory.'  Note that the names
+# of the xml files and text files they refer to should be the same as the files
+# described by the 'training data file' mentioned above. 
+#
+# Property descriptor requires proper upper and lower case: TRUE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: FALSE
+#
+# EXAMPLE: -r "H:\AllFolders\ResAppProjects\ORD_Matheny_201406009D_Cirrhosis\Glenn\CrossValidation\TestingXML"
+.
+# Application used to create annotations (either Knowtator or eHost - upper and lower case acceptable)
+#
+# Property descriptor requires proper upper and lower case: FALSE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: FALSE
+# Default value if no option provided: EHOST
+#
+# EXAMPLE: -a eHost
+
+
+# Training group size
+#
+# Property descriptor requires proper upper and lower case: NOT APPLICABLE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: FALSE
+# Default value if no option provided: 0 (leave one out cross-validation)
+# Example: -u 0
+
+
+# Path to acceptable concepts
+#
+# Property descriptor requires proper upper and lower case: TRUE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: FALSE
+# Default value if no option provided: All concepts in schema included
+#
+-c "H:\AllFolders\ResAppProjects\ORD_Matheny_201406009D_Cirrhosis\Glenn\CrossValidation\AcceptedConcepts_171127.txt"
+
+
+
+# Path to dictionary file
+# Property descriptor requires proper upper and lower case: TRUE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: FALSE
+-d "H:\AllFolders\ResAppProjects\ORD_Matheny_201406009D_Cirrhosis\Glenn\CrossValidation\CirrhosisLexicon_171129.txt"
+
+
+
+# Fully qualified name of sentence filter:phrase filter: phrase filter parameters (used to select sentences)
+#
+# Property descriptor requires proper upper and lower case: TRUE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: TRUE
+# Multiple descriptor separator character: '^'
+# Default value if no option provided: Null, no dictionary used
+#
+# EXAMPLE: -i "src.main.gov.va.vha09.grecc.raptat.gg.algorithms.crf.featurebuilding.labelingfilters.sentence.PhraseBasedSentenceFilter:src.main.gov.va.vha09.grecc.raptat.gg.algorithms.crf.featurebuilding.labelingfilters.phrase.ConceptBasedPhraseFilter:livingsituationcue:alone:extfamily:group:homeless:nuclearfamily:other"
+
+
+
+# Paths to attribute taggers
+#
+# Property descriptor requires proper upper and lower case: TRUE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: TRUE
+# Multiple descriptor separator character: '^'
+# Default value if no option provided: Null, no attribute taggers used
+#
+-b "H:\AllFolders\ResAppProjects\ORD_Matheny_201406009D_Cirrhosis\Glenn\CrossValidation\CueScopeSolution_Rd00_CSTrainingFeatures_UnprocessedTokens_v01_160721_175700.atsn"
+
+
+
+# Fully qualified names representing attribute conflict managers
+#
+# Property descriptor requires proper upper and lower case: TRUE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: TRUE
+# Multiple descriptor separator character: ^
+# Default value if no option provided: Null, no conflict managers used.  Though they are not required, failure to include them can only lead to conflict if there is more than one
+# attribute tagger included and can conflict with default probabilistic taggers.
+#
+-g "src.main.gov.va.vha09.grecc.raptat.gg.core.attributeconflictmanagers.AssertionConflictManager"
+
+
+
+# String (upper and lower case acceptable) representing the Token Sequence Finder method (PROBABILISTIC, NAIVEBAYES, BAGOFWORDS, NONNAIVEBAYES, CRF); Probabilistic is default
+#
+# Property descriptor requires proper upper and lower case: FALSE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: FALSE
+# Default value if no option provided: Probabilistic
+#
+-m Probabilistic
+
+
+
+# Fully qualified name of annotation group post processors:parameters in order called by constructor
+#
+# Take an AnnotationGroup object and process it after RapTAT and dictionary annotation is complete
+# The post processor should implement the AnnotationGroupPostProcessor interface.  
+#
+# Property descriptor requires proper upper and lower case: TRUE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: TRUE
+# Multiple descriptor separator character: '^'
+# Parameter Separator:'|'
+# Default value if no option provided: Null, no post processing will be done
+#
+-t "src.main.gov.va.vha09.grecc.raptat.gg.core.annotation.postprocessing.AKIPostProcessor"
+
+
+
+# Set section match name and regex pattern - this example finds sections listing allergies.  The regex 
+# pattern starts after the initial colon.
+#
+# Property descriptor requires proper upper and lower case: TRUE
+# Property descriptor must be surrounded by quotes: TRUE
+# Allows multiple descriptors: TRUE
+# NOTE THAT multiple descriptor separator character is DIFFERENT: '~'
+#
+# EXAMPLE: -v "allergy:^\\s*(?:\\w+\\s+)?(?:allerg|allrg|alerg|alleg|adverse|advrs).*"
+
+
+
+# Set sentence match name and regex pattern - this example finds sentences listing allergies.   The 
+# regex pattern starts after the initial colon.
+#
+# Property descriptor requires proper upper and lower case: TRUE
+# Property descriptor must be surrounded by quotes: TRUE
+# Allows multiple descriptors: TRUE
+# NOTE THAT multiple descriptor separator character is DIFFERENT: '~'
+#
+# EXAMPLE: -y "allergy:^\\s*(?:\\w+\\s+)?(?:allerg|allrg|alerg|alleg|adverse|advrs).*" 
+
+
+
+# Set sentence context analyzers.
+#
+# Property descriptor requires proper upper and lower case: FALSE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: TRUE
+# Multiple descriptor separator character: '^'
+#
+# EXAMPLE: -k "attributeName:assertionstatus, sentenceContextName:allergy, defaultAttributeValue:negative, contextAssignedAttributeValue:positive, returnDefault:true" ^ "attributeName:withinmedlist, sentenceContextName:medSectionTag, defaultAttributeValue:no, contextAssignedAttributeValue:yes, returnDefault:true"
+
+
+
+# Describe ContextSifter instances as parameter:value pairs.  Note that these actually describe ContextCheckers that are stored within a ContextSifter instance.
+# The specific parameters of a ContextChecker are: 
+# order, concepts, context, forbidden_distance_reverse, forbidden_distance_forward, required_distance_reverse, required_distance_forward
+# 'order' is the order of evaluations when there are multiple ContextCheckers in a ContextSifter, those with order of '0' are evaluated first
+# 'concepts' are the concepts that are affected by other, contextual concepts
+# 'context' is a boolean expression describing one or more concepts
+# 'required_distance_reverse' is the number of sentences before the one containing the listed concepts for which the boolean expression must evaluate to TRUE for the concept(s) to be kept
+# 'required_distance_forward' is the number of sentences after the one containing of the listed concepts for which the boolean expression must evaluate to TRUE for the concept(s) to be kept
+# 'forbidden_distance_reverse' is the number of sentence before the one containing the listed concepts for which the boolean expression must evaluate to FALSE for the concept(s) to be kept
+# 'forbidden_distance_forward' is the number of sentence after the one containing the listed concepts for which the boolean expression must evaluate to FALSE for the concept(s) to be kept
+# 'required' vs 'forbidden' is a bit redundant as one can just negate the boolean expression of a requirement to get an expression that is forbidden
+#
+# Property descriptor requires proper upper and lower case: FALSE
+# Property descriptor must be surrounded by quotes: FALSE
+# Allows multiple descriptors: TRUE
+# Multiple descriptor separator character: '^'
+#
+-e "order:2 concepts:00_NULL_01 context:00_NULL_02 required_distance_reverse:0 required_distance_forward:0 ^ order:1 concepts:13_radiographiccharacteristics, 20_cancerdetermination context:01_liver||02_liverlobe required_distance_reverse:1  required_distance_forward:1 ^ order:0 concepts:05_massfocalarea context:01_liver||02_liverlobe required_distance_reverse:1  required_distance_forward:1"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

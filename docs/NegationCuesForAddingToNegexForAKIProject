@@ -1,0 +1,29 @@
+POST	50	? no
+POST	40	: no
+POST	18	: none
+POST	15	: [no]
+POST	11	: neg
+POST	5	? n
+POST	3	?n
+POST	2	:no
+POST	4	:none
+POST	24	hold
+POST	13	negative
+POST	7	neg
+POST	2	: never
+POST	2	: not
+POST	2	: quit
+POST	2	: resolved
+POST		:never
+POST		:not
+POST		:quit
+POST		:resolved
+PRE	43	non-
+PRE	25	without
+PRE	21	non
+PRE	4	stop:
+PRE	38	(-)
+PRE	2	[-]
+PRE	5	cannot
+PRE		hold for
+PRE		negative for

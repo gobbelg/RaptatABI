@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<annotations textSource="1140.txt">
+    <annotation>
+        <mention id="EHOST_Instance_16" />
+        <annotator id="eHOST_2010">Abby</annotator>
+        <span start="706" end="716" />
+        <spannedText>depression</spannedText>
+        <creationDate>Thu Aug 03 10:46:23 CDT 2017</creationDate>
+    </annotation>
+    <stringSlotMention id="EHOST_Instance_19">
+        <mentionSlot id="Assertion" />
+        <stringSlotMentionValue value="positive" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_20">
+        <mentionSlot id="Experiencer" />
+        <stringSlotMentionValue value="patient" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_21">
+        <mentionSlot id="Time Frame" />
+        <stringSlotMentionValue value="current" />
+    </stringSlotMention>
+    <classMention id="EHOST_Instance_16">
+        <hasSlotMention id="EHOST_Instance_19" />
+        <hasSlotMention id="EHOST_Instance_20" />
+        <hasSlotMention id="EHOST_Instance_21" />
+        <mentionClass id="7. DEPRESSION">depression</mentionClass>
+    </classMention>
+    <annotation>
+        <mention id="EHOST_Instance_17" />
+        <annotator id="eHOST_2010">Hillard</annotator>
+        <span start="341" end="367" />
+        <spannedText>comes to clinic by herself</spannedText>
+        <creationDate>Sun Sep 17 13:32:07 CDT 2017</creationDate>
+    </annotation>
+    <stringSlotMention id="EHOST_Instance_22">
+        <mentionSlot id="Assertion" />
+        <stringSlotMentionValue value="negative" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_23">
+        <mentionSlot id="Experiencer" />
+        <stringSlotMentionValue value="patient" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_24">
+        <mentionSlot id="Time Frame" />
+        <stringSlotMentionValue value="current" />
+    </stringSlotMention>
+    <classMention id="EHOST_Instance_17">
+        <hasSlotMention id="EHOST_Instance_22" />
+        <hasSlotMention id="EHOST_Instance_23" />
+        <hasSlotMention id="EHOST_Instance_24" />
+        <mentionClass id="2. FAMILY_SUPPORT">comes to clinic by herself</mentionClass>
+    </classMention>
+    <annotation>
+        <mention id="EHOST_Instance_18" />
+        <annotator id="eHOST_2010">Hillard</annotator>
+        <span start="492" end="511" />
+        <spannedText>saw us in clinic in</spannedText>
+        <creationDate>Sun Sep 17 19:08:22 CDT 2017</creationDate>
+    </annotation>
+    <stringSlotMention id="EHOST_Instance_25">
+        <mentionSlot id="Assertion" />
+        <stringSlotMentionValue value="positive" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_26">
+        <mentionSlot id="Experiencer" />
+        <stringSlotMentionValue value="patient" />
+    </stringSlotMention>
+    <stringSlotMention id="EHOST_Instance_27">
+        <mentionSlot id="Time Frame" />
+        <stringSlotMentionValue value="current" />
+    </stringSlotMention>
+    <classMention id="EHOST_Instance_18">
+        <hasSlotMention id="EHOST_Instance_25" />
+        <hasSlotMention id="EHOST_Instance_26" />
+        <hasSlotMention id="EHOST_Instance_27" />
+        <mentionClass id="7. DEPRESSION">saw us in clinic in</mentionClass>
+    </classMention>
+    <eHOST_Adjudication_Status version="1.0">
+        <Adjudication_Selected_Annotators version="1.0" />
+        <Adjudication_Selected_Classes version="1.0" />
+        <Adjudication_Others>
+            <CHECK_OVERLAPPED_SPANS>false</CHECK_OVERLAPPED_SPANS>
+            <CHECK_ATTRIBUTES>false</CHECK_ATTRIBUTES>
+            <CHECK_RELATIONSHIP>false</CHECK_RELATIONSHIP>
+            <CHECK_CLASS>false</CHECK_CLASS>
+            <CHECK_COMMENT>false</CHECK_COMMENT>
+        </Adjudication_Others>
+    </eHOST_Adjudication_Status>
+</annotations>
+

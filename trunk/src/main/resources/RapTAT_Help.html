@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <style type="text/css">
+                        body {padding:10;}
+                        table,td {border-collapse:collapse}
+                        td {text-align:left;}
+                        td.first {padding:0 10;}
+                        td.secColumn {padding:15 5;}
+                        font.subhead {line-height:200px;}
+                        font.menuItem {font:italic bold 95% "Arial","Calibri","Verdana", sans-serif; }
+                        font.subMenuItem {font: bold 95% "Arial","Calibri","Verdana", sans-serif; }
+                        p.subSubhead {padding:0 15;}
+                        p.returnLink {font-style:italic; text-align:right; padding-right:25}
+                        p.signature {font: italic 100% "Times New Roman", serif;line-height:100%}
+                </style>
+    </head>
+        <body>
+                        <h3 align=center style='color:blue;text-align:center;font-weight:bold'>
+                                <font style='font-size:140%'> <a name="theTop">RapTAT</a></font><br>
+                                <i>A Rapid, Automated Text Annotation Tool</i>
+                        </h3>
+                <table>
+                                <tr>
+                                        <td>I.</td><td class="first"><a href="#generalDescription">
+                                                General Description</a><br></td>
+                                </tr>
+                                <tr>
+                                        <td>II.</td><td class="first"><a href="#quickstart">
+                                                Getting Started</a><br></td>
+                                </tr>
+                                <tr>
+                                        <td>III.</td><td class="first"><a href="#fileMenu">
+                                                File Menu</a><br></td>
+                                </tr>                            
+                                <tr>
+                                        <td>IV.</td><td class="first"><a href="#trainingMenu">
+                                                Training Menu</a><br></td>
+                                </tr>
+                                <tr>
+                                        <td>V.</td><td class="first"><a href="#testingMenu">
+                                                Testing Menu</a><br></td>
+                                </tr>
+                                <tr>
+                                        <td>VI.</td><td class="first"><a href="#optionsMenu">
+                                                Options Menu</a><br></td>
+                                </tr>
+                </table>                
+                <br>
+                <div>
+                        <strong>
+                                <font class="subhead">
+                                        <a name="generalDescription">General Description</a> <br>
+                                </font>
+                        </strong><br>
+                          RapTAT is a Java-based, stand-alone tool designed to identify and 
+                          optimize machine-learning methods for accelerating
+                          and/or automating free-text annotation.  In the current version
+                          of the tool, the user trains the machine-learning system by loading 
+                          it with document phrases annotated with particular 
+                          concepts.  Once the system has processed the phrases, the tool saves a "solution"
+                          file, which represents the most probable mapping of
+                          words in a phrase to a concept.  <br><br>
+                          
+                          Once created and saved, a user can apply the solution file to 
+                          two potential tasks.  For one, a user can apply the solution to map phrases
+                          from novel documents to a particular concept.  
+                          For example, a user might select phrases 
+                          of interest within the free-text.  The tool can then use
+                          the solution file to label the phrases with concepts included in the training
+                          set.<br><br>
+                          
+                          A second potential use is to evaluate training efficacy.  RapTAT will 
+                          evaluate how accurately a trained solution is able to map phrases to concepts 
+                          within a novel set of documents. To do this, the user provides annotated phrases from a novel 
+                          document set along with the mapped concepts.  The system then utilizes the 
+                          solution file to carry out its own mapping of the phrases to potential 
+                          concepts.  Finally, the tool provides the user with a summary comparing the concept 
+                          mappings provided by the user to those determined by the machine-learning 
+                          system.<br><br>
+                          
+                          Training and evaluation of training efficacy is the intended primary use
+                          for the tool.  The optimal machine learning method and settings 
+                          may vary depending on the nature of documents to be annotated.  Because
+                          of this, the RapTAT tool provides a way to determine the optimal  
+                          machine learning method and settings for training and testing.  The current
+                          version provides two different machine learning algorithms for use.  
+                          The first is based on a naive Bayes network, and the second is based on a 
+                          non-naive, sequential Bayes network.  Further description of these 
+                          machine learning methods and their settings is provided in the
+                          <a href="#optionsMenu">Options</a> section below.
+                          <p class="returnLink"><a href="#theTop">Return to Top</a></p>
+                        <br><br>
+                        <strong>
+                                <font class="subhead">
+                                        <a name="quickstart">Getting Started</a>
+                                </font>
+                        </strong><br><br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;Training and testing of 
+                        the RapTAT machine learning system consists of five
+                         basic steps.  An initial overview of the steps is given 
+                         below followed by a more <a href="#detailedDescription">
+                         detailed description</a> of  each of these.
+                         <br><br>
+                         <strong><i>Overview</i></strong>
+                         <br><br>
+                        - First, the user
+                        generates two sets of annotated phrases, one 
+                        for system training and another for testing.<br><br> 
+                        - Next, the user converts the two sets into separate
+                        files saved in a format readable by the RapTAT
+                        application.<br><br> 
+                        - The training set file is then
+                        loaded into by the user into the RapTAT tool,
+                        which generates a solution file based on the
+                        association between phrases and annotations.<br><br> 
+                        - After training, the user loads the testing set
+                        into RapTAT, which then maps each test phrase
+                        to an annotation based on the phase/annotation
+                        associations present in the training set.<br><br> 
+                        - Finally, the tool 
+                        compares the machine-learning based phrase/annotation associations
+                        to the associations delineated by the testing set.  A summary file
+                        of these comparison is automatically generated, which the user
+                        can view in Excel or any other application
+                        capable of displaying
+                        comma-separated value (.csv) files.<br>
+                        <p class="returnLink">
+                                <a href="#theTop">Return to Top</a>
+                        </p>
+                        <br><hr><br>
+                        <strong>
+                                <i>
+                                        <a name="detailedDescription">Detailed Description</a>
+                                </i>
+                        </strong>
+                         <br>
+                        <table>
+                                <tr class="steps">
+                                        <td class="secColumn" valign="top">1.</td>
+                                        <td class="secColumn">
+                                                <u>Generation of Training and Test Sets</u> - 
+                                                The process used for generating 
+                                                training and test sets of annotated phrases is
+                                                determined by the user.  The most significant factor to consider is how the data set will be loaded into RapTAT.  
+                                                As noted in step two below, RapTAT can import annotations created 
+                                                by the Knowtator plug-in within Protege.  It can also import annotations stored 
+                                                as comma-separated values.
+                                        </td>
+                                </tr>
+                                <tr class="steps">
+                                        <td class="secColumn" valign="top">2.</td>
+                                        <td class="secColumn">
+                                                <u>Data Conversion for Import</u>
+                                                         - Annotated data sets can be supplied as either a
+                                                        comma-separated value (.csv) file or as a Knowtator (.pprj;
+                                                        Version 1.8 or earlier; http://knowtator.sourceforge.net/)
+                                                        file.  For csv files, each row should correspond to one
+                                                        annotated phrase.  The first column of the row should
+                                                        contain the document number from which the phrase was
+                                                        annotated. The last column should contain the
+                                                        annotation/concept to which the phrase was mapped.  The
+                                                        columns between the first and last should contain the
+                                                        annotated phrase itself with one token/word per column.
+                                                        <br><br> An important note is that each row should contain
+                                                        the same number of tokens within a phrase.  If some phrases
+                                                        have fewer tokens than the number in the longest phrase, the
+                                                        shorter phrases should be padded with the appropriate number
+                                                        of NULL_ELEMENT strings to make the phrase token number equal. 
+                                                        For example, suppose the longest phrase annotated within the
+                                                        set is "the bright red rooster," which is 4 tokens long.  If
+                                                        the data set contains another annotation corresponds to the
+                                                        2 token phrase "running fast," this phrase should be padded
+                                                        with two NULL_ELEMENT strings and thus changed to "running fast
+                                                        NULL NULL".
+                                                <br><br>
+                                                It should also be noted that correct document numbers are
+                                                not required. If the user does not have the document
+                                                information or does not wish to evaluate how the system
+                                                performs on mapping phrases to annotations within particular
+                                                documents, the document information can be any arbitrary
+                                                string of characters.
+                                                <br>
+                                        </td>
+                                </tr>
+                                <tr class="steps">
+                                        <td class="secColumn" valign="top">3.</td>
+                                        <td class="secColumn">
+                                                <u>Loading Training Data</u>
+                                                  - Select the menu item 
+                                                <font class="menuItem">
+                                                        Training -> Load Training Data.  
+                                                </font>
+                                                The application will open a dialog box for selecting the 
+                                                file containing the training data.  As noted above, the files can be either
+                                                a comma-separated value or Knowtator project file.
+                                                <br>
+                                                <b>*Note</b> - Files must be named with the appropriate 
+                                                extension (.csv or .pprj, respectively) for them to be available within 
+                                                the RapTAT file selection dialogue.
+                                                <br>
+                                        </td>
+                                </tr>
+                                        <tr>
+                                        <td class="secColumn" valign="top">4.</td>
+                                        <td class="secColumn">
+                                                <u>Evaluating Test Data</u>
+                                                  - Select the menu item 
+                                                <font class="menuItem">
+                                                        Testing -> Evaluate Test Set.  
+                                                </font>
+                                                The application will open a dialog box for selecting the 
+                                                file containing the testing data.  As with training data, the file can 
+                                                be either
+                                                a comma-separated value or Knowtator project file.  <b>*Once again, the
+                                                file must be named with the appropriate extension (.csv or .pprj, 
+                                                respectively) for it to be available within the RapTAT file selection 
+                                                dialog.</b>
+                                                <br><br>
+                                                Just as with generation of the solution file, the system does not provide 
+                                                user feedback regarding progress during testing.  The system runs somewhat
+                                                slower during testing than during training  and can map approximately 
+                                                4000 phrases per second to concepts for data sets containing 
+                                                phrases up to 7 words in length.
+                                                <br>
+                                        </td>
+                                </tr>
+                                 <tr>
+                                        <td class="secColumn" valign="top">5.</td>
+                                        <td class="secColumn">
+                                                <u>Result Files</u> - 
+                                                The tool will automatically generate a comma-separated value (.csv) file each
+                                                time a test set is evaluated.  This file contains rows corresponding to each
+                                                phrase and the annotation provided by the user.  An additional column 
+                                                shows the most probable concept mapping as determined by the system.
+                                                <br><br>  
+                                                By default, the system will also generate summary files providing various 
+                                                evaluations such as the overall precision, recall, and F-measure and the
+                                                relationships between phrase length and these three parameters.  The menu
+                                                item 
+                                                <font class="menuItem">
+                                                        Options -> Set Testing Parameters 
+                                                </font>
+                                                can be used to opt out of generating summaries.  Note that, if
+                                                this option is used,
+                                                the tool will still generate detailed comparisons of user-provided
+                                                to machine-determined annotations.
+                                                <br>
+                                        </td>
+                                </tr>
+                        </table>
+                        <p class="returnLink"><a href="#theTop">Return to Top</a></p>
+            <br><br>
+            <strong>
+                                <font class="subhead">
+                                        <a name="fileMenu">File Menu</a> 
+                                </font>
+                        </strong><br><br>
+                        <font style="line-height:100%">
+                This menu provides one item,
+                <font class="menuItem">
+                                        File -> Quit  
+                                </font>
+                                , allowing the user to end the program.
+                <p class="returnLink"><a href="#theTop">Return to Top</a></p>
+            </font><br><br>
+            <strong>
+                                <font class="subhead">
+                                        <a name="trainingMenu">Training Menu</a> 
+                                </font>
+                        </strong>
+                        <br><br>
+                        <p class="subSubhead">
+                                <font class="menuItem" style="text-decoration:underline">
+                                        Create Trained Solution  
+                                </font>
+                                 - This menu item allows the user to load a training file and
+                                 create a trained solution file.  The machine learning method and parameters 
+                                 used for training must be set before selecting this item using 
+                                 the menu item 
+                                 <font class="menuItem" >
+                                        Options -> Set Training Parameters
+                                 </font>
+                                 . The application will first ask 
+                                 the user to select a file for training.  The file type should be
+                                 either a comma-separated value (.csv) or Knowtator (.pprj; version 
+                                 1.8 or earlier) file.  The user will be unable to select other 
+                                 file types.  Immediately after choosing the training file, the 
+                                 provide a dialog box prompting the user to select a location 
+                                 and name for saving the solution file, which will be used 
+                                 by the system to calculate the most probable concept mappings 
+                                 for phrases from novel documents.  The system will then examine 
+                                 the phrase concept mappings within the training set and generate
+                                 and save a solution file.  
+                                 <br><br>
+                                 If a .csv file type is used, each row should correspond to one 
+                                 phrase and concept from a single document.  The first column
+                                 should contain a string to identify the document, and the last
+                                 column should contain a string identifying the concept to which 
+                                 the phrase of interest was mapped.  The columns between the 
+                                 first and last should contain the phrase of interest with commas
+                                 separating the tokens (words) within the phrase.  So
+                                 that all phrases contain the same number of tokens.  The user should
+                                 add NULL_ELEMENT strings separated by commas after the end of the last token
+                                 to shorter phrases. To do this, identify the number of tokens in 
+                                 longest phrase within the training set.  For example, if the longest phrase 
+                                 happens to be "chronic obstructive pulmonary disease", the highest number 
+                                 of tokens would be four (assuming the user defines single words as 
+                                 tokens).  In this case, a two token phrase such as "blood pressure" 
+                                 should be changed to "blood pressure NULL NULL".
+                                 <br><br>
+                                 Identification of the document is used only for creating summary
+                                 evaluations during testing of the
+                                 trained solution.  If it there is 
+                                 no reason to keep track of this identification or it is unknown, 
+                                 any arbitrary string can be entered 
+                        </p>
+                                                <p class="subSubhead">
+                                <font class="menuItem" style="text-decoration:underline">
+                                        Load Trained Solution  
+                                </font>
+                                 - This menu item allows the user to load a solution file 
+                                 previously created by the RapTAT application.  The solution 
+                                 file is automatically created during training and saved.  A user 
+                                 can then evluate the system by loadin it at a later time using this 
+                                 menu item for loading followed by selecting 
+                                 <font class="menuItem" >
+                                        Testing -> Evaluate Test Set
+                                 </font>
+                                 .
+                        </p>
+                        <p class="returnLink"><a href="#theTop">Return to Top</a></p>
+                        <br><br>
+                                <strong>
+                                <font class="subhead">
+                                        <a name="testingMenu">Testing Menu</a>
+                                </font>
+                        </strong>
+                        <br><br>
+                        <p class="subSubhead">
+                                <font class="menuItem" style="text-decoration:underline">
+                                        Evaluate Trained Solution  
+                                </font>
+                                The application will first ask 
+                                 the user to select a file for training.  The file type should be
+                                 either a comma-separated value (.csv) or Knowtator (.pprj; version 
+                                 1.8 or earlier) file.  The user will be unable to select other 
+                                 file types.  Immediately after choosing the training file, the 
+                                 provide a dialog box prompting the user to select a location 
+                                 and name for saving the solution file, which will be used 
+                                 by the system to calculate the most probable concept mappings 
+                                 for phrases from novel documents.  The system will then examine 
+                                 the phrase concept mappings within the training set and generate
+                                 and save a solution file.  
+                        </p>
+                        <p class="returnLink"><a href="#theTop">Return to Top</a></p>
+                        <br><br>
+                        <strong>
+                                <font class="subhead">
+                                        <a name="optionsMenu">Options</a> 
+                                </font>
+                        </strong>
+                        <br><br>
+                        <p class="subSubhead">
+                                <font class="menuItem" style="text-decoration:underline">
+                                        Set Training Parameters 
+                                </font>
+                                 This allows the user to set the machine learning method and parameters 
+                                 used during training.  Currently, only naive and non-naive (sequential) 
+                                 Bayes methods are available for training.  A machine-learning method 
+                                 based on decision trees will be implemented at a later time.
+                                 <br>
+                                 The naive Bayes method assumes 
+                                 that the tokens within the phrase are independently determined by the 
+                                 concept.  However, token order <strong>is</strong> important, so that although the probability 
+                                 that a concept is associated with a given token is calculated separately for 
+                                 each token position.  For the non-naive or sequential, word order is important. 
+                                 This machine-learning method takes into account that preceding tokens in
+                                 a phrase can alter the probability of the appearance of subsequent tokens.
+                                 
+                                 A user can choose whether tokens denoted by the string NULL_ELEMENT are included 
+                                 in determining the probability of associations between concepts and tokens. 
+                                 it is recommended that this be set to "No" for naive Bayes and "Yes" for non-
+                                 naive Bayes.  Inclusion of nulls in computation of the naive Bayes network 
+                                 makes the machine learning system consider NULL_ELEMENT to be an actual string.  
+                                 If many phrases are short relative to the phrase with the highest number of 
+                                 tokens, the presence of null values can have a substantial influence on mappings 
+                                 of phrases to concepts.
+                        </p>
+                        <p class="subSubhead">
+                                <font class="menuItem" style="text-decoration:underline">
+                                        Set Testing Parameters  
+                                </font>
+                                 - This menu item allows the user to choose the parameters used during 
+                                 evaluation of the performance of a solution on a data test set.  Currently, 
+                                 only the parameters "Null Filtering" and "Generate Summaries?" are 
+                                 operational.  The feature of "Phrase Expansion/Compression" is not yet 
+                                 implemented.  Null filtering accounts for a feature of Bayes probabilities, 
+                                 which is that the probability of association between a phrase and a concept 
+                                 is equal to zero when the phrase contains tokens not present within the 
+                                 training set.  Smoothing forces the system to consider all tokens to have 
+                                 prior occurrences of at least one.  "Standard" null filtering, which is 
+                                 recommended, first measures probabilities without using smoothing.  
+                                 Then, if the probability of all associations is zero, smoothing is used.  For
+                                 "Smoothed" null filtering, smoothing is used in all cases.  Using smoothed 
+                                 null filtering should accelerate processing time but may reduce accuracy of 
+                                 concept mapping.
+                        </p>
+                        <p class="returnLink"><a href="#theTop">Return to Top</a></p>
+                        <br><br><br>
+                        <br><br><br><br><br><br><br><br><br><br><br><br>
+                        <p class="signature">
+                                -------------------------------<br>
+                                <b>Comments/Questions:</b><br>
+                                Glenn Gobbel<br>
+                                Tennessee Valley Health System<br>
+                                VA Consortium on Healthcare Informatics (CHIR)<br>
+                                glenn.gobbel@va.gov<br>
+                                February 19, 2011
+                        </p>
+                </div>
+        </body>
+</html>

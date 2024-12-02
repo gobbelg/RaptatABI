@@ -1,0 +1,68 @@
+1.	Create a training file with all features excluded using the main() method of CSAttributeTaggerTrainer class
+	using the following parameter settings in the run() method within main:
+	
+		RunType runType = RunType.PRINT_FEATURES;
+		String cueIncludedFeaturesFilePath = null;
+		String scopeIncludedFeaturesFilePath = null;
+		int wordConjuctionOffset = 4;
+		int wordNgramSize = 4;
+		int posConjunctionOffset = 4;
+		int posNgramSize = 4;
+		String tagForPrintFileName = "NoExclusion";
+		
+	This will create two training files, 1 for scope and 1 for cue, and the file name will be tagged with 'NoExclusion.'
+	
+	
+	
+2.	Use the CRFSuiteRunner class to run cross-validation and estimate performance of a model built using the training 
+	files from step 1.  This can be done by using the run() method within main of the CRFSuiteRunner class:
+	
+		String trainingFileListFileName = 'FILE NAME OF FILE LISTING FILES CREATED IN STEP 1';
+		SuiteRunnerType runType = SuiteRunnerType.MULT_CROSS_VALIDATE;
+		
+	(Note that an alternative way to do this is to set runType = SuiteRunnerType.CROSS_VALIDATE and then set the
+	'String trainingFileName' parameter to point at one of the two training files.  This should then be run twice.
+	This can be faster as the two cross-validation estimates can be run in parallel.
+	
+	
+	
+3.	Paste the results of the cross-validation into excel spreadsheets.  For running of MULT_CROSS_VALIDATE, a file with 
+	the results for each training file in step 2 is created.  For running CROSS_VALIDATE, the results are printed to the
+	console at the end of the cross-validation process.  Then proceed as follows for each training file:
+	
+	Add together the beginning label and inside label results to determine precision, recall, and F-measure for both together.
+	
+	
+	
+4.	Use the CRFSuiteRunner class to estimate the variation in the weights (mean, sd, sem, mean/sem) of features in the
+	model.  This can be done by using the run() method within main of the CRFSuiteRunner class and these parameters: 
+	
+		SuiteRunnerType runType = SuiteRunnerType.ESTIMATE_PARAMETERS
+		String trainingFileName = 'NAME OF FILE USED TO TRAIN MODEL' (created in step 1)
+		
+		
+5.	Identify the features whose mean weight relative to the SEM is sufficient to support inclusion in the model.  Different 
+	methods and setting may be used for this identification.  We have found that we include any features for which the mean
+	weight is at least 2*SEM from zero.  Features with 0 SEM are excluded as it means that the features is rare and SEM
+	cannot be measured.  The scope features and cue features identified should be stored as 2 separate lists in 2 separate
+	files.
+	
+	
+6.	Create new training files as in step 1 but with new parameters that indicate what features to include in the models:
+
+		RunType runType = RunType.PRINT_FEATURES;
+		String cueIncludedFeaturesFilePath = 'PATH TO IDENTIFIED CUE FEATURES FILE'; (created in previous step)
+		String scopeIncludedFeaturesFilePath = 'PATH TO IDENTIFIED SCOPE FEATURES FILE'; (created in previous step)
+		int wordConjuctionOffset = 4;
+		int wordNgramSize = 4;
+		int posConjunctionOffset = 4;
+		int posNgramSize = 4;
+		String tagForPrintFileName = "Exclusion"; (can use any descriptive name here)
+		 
+	This will create two training files, 1 for scope and 1 for cue, and the file name will be tagged with 'NoExclusion.'
+	
+
+7.	Repeat steps 2 and 3 to estimate performance of the models with the new training that includes only some of the initial
+	features.  If performance is improved relative to inclusion of all features, repeat steps 3-7 until there is no
+	further improvement in performance.
+	
