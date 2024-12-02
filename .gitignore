@@ -27,9 +27,9 @@ Thumbs.db
 *.class
 
 # Ignore packaged files
-*.jar
-*.war
-*.ear
+#*.jar
+#*.war
+#*.ear
 
 # Ignore personal IDE settings
 *.prefs
